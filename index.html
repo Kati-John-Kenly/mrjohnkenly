@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="John Kenly — Front-end Developer. Portfolio showcasing responsive UI, projects, and skills.">
+  <title>John Kenly — Front-end Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+  <div class="loader-screen" aria-hidden="true">
+    <div class="loader-screen__ring"></div>
+    <p>Loading your creative space…</p>
+  </div>
+  <div class="container">
+    <header class="site-header">
+      <a class="brand" href="#home">JOHN KENLY</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="header-actions" id="site-nav">
+        <nav class="site-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="/newP/pdfs/myResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        </nav>
+        <div class="controls" aria-label="Utility controls">
+          <div class="theme-switch" role="switch" aria-label="Theme switch">
+            <button class="theme-toggle" type="button" data-theme="dark" aria-pressed="true" title="Switch to light theme">
+              <span class="theme-toggle__thumb"></span>
+              <span class="theme-toggle__icon">🌙</span>
+            </button>
+          </div>
+          <div class="audio-control">
+            <button class="audio-toggle" type="button" aria-pressed="false" title="Start ambient sound">♫</button>
+          </div>
+          <button class="like-btn" aria-pressed="false" title="Like this portfolio">👍 <span class="like-count">0</span></button>
+          <div class="viewers" title="Profile viewers">
+            👀<span class="viewer-count" aria-live="polite">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-panel active" id="home">
+      <section class="hero" aria-labelledby="intro">
+        <div class="intro">
+          <h1 id="intro">Hi, I’m John — a Front‑end Developer</h1>
+          <p class="lead">I build responsive, accessible, and performant user interfaces using modern web technologies (HTML, CSS, JavaScript). I enjoy crafting delightful user experiences and writing clean, maintainable code.</p>
+          <br><br><br>
+          <div class="cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Profile summary" style="border: solid 2.5px rgb(78, 78, 78); ">
+          <div class="avatar-wrap" aria-hidden="true">
+            <div class="avatar" role="img" aria-label="Profile avatar">
+              <img src="imges\IMG_20240907_172921_480.jpg" alt="John Kenly — profile photo" class="avatar-img" width="00" height="700" loading="lazy" decoding="async"  onerror="this.onerror=null;this.src='assets/avatar-placeholder.svg'" />
+            </div>
+          </div>
+          <div class="profile-content">
+            <div class="role">Front-end Developer</div>
+            <div class="profile-name">John Kenly</div>
+            <p class="profile-desc">Focused on building accessible interfaces and reusable component systems. Open to collaborations and new projects.</p>
+
+            <div class="socials" aria-label="Social links">
+              <a class="social-link" href="https://github.com/mrjohnkenly" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.08 0 4.4-2.68 5.36-5.24 5.64.42.36.8 1.08.8 2.18 0 1.58-.02 2.86-.02 3.25 0 .31.21.68.8.56C20.71 21.41 24 17.09 24 12 24 5.65 18.35.5 12 .5z"></path></svg></a>
+              <a class="social-link" href="https://linkedin.com/in/mrjohnkenly" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.98h4.5V24h-4.5V8.98zm7.5 0h4.32v2.06h.06c.6-1.14 2.06-2.34 4.24-2.34 4.54 0 5.38 2.98 5.38 6.84V24h-4.5v-7.38c0-1.76-.03-4.03-2.46-4.03-2.46 0-2.84 1.92-2.84 3.9V24h-4.5V8.98z"></path></svg></a>
+              <a class="social-link" href="mailto:johnkenlykati@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path></svg></a>
+              <a class="social-link" href="https://wa.me/6281734254?text=Hi%20John%2C%20I%20found%20your%20portfolio" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.57 1.38 5.06L2 22l5.1-1.33A9.97 9.97 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.03 14.54c-.32.9-1.86 1.73-2.58 1.84-.69.11-1.54.16-3.7-.59-3.03-1.01-5-3.6-5.17-3.83-.17-.23-1.41-1.82-1.41-3.49 0-1.66.9-2.43 1.22-2.77.32-.34.7-.37.93-.37.24 0 .51 0 .78 0 .26 0 .61-.1.93.73.32.83 1.08 2.85 1.17 3.06.1.2.18.45.04.73-.14.27-.22.43-.4.66-.18.23-.38.5-.53.66-.14.16-.26.28-.05.55.21.27 1.17 1.88 2.52 3.03 1.73 1.48 2.97 1.8 3.36 1.99.4.19 1.02.12 1.39-.49.37-.61.52-1.06.58-1.17.07-.11.03-.24-.09-.37z"></path></svg></a>
+              <a class="social-link" href="https://instagram.com/mrjohnkenly" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.055 1.96.24 2.42.4a4.92 4.92 0 011.77 1.02 4.92 4.92 0 011.02 1.77c.16.46.345 1.25.4 2.42.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.24 1.96-.4 2.42a4.92 4.92 0 01-1.02 1.77 4.92 4.92 0 01-1.77 1.02c-.46.16-1.25.345-2.42.4-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.96-.24-2.42-.4a4.92 4.92 0 01-1.77-1.02 4.92 4.92 0 01-1.02-1.77c-.16-.46-.345-1.25-.4-2.42C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.055-1.17.24-1.96.4-2.42a4.92 4.92 0 011.02-1.77A4.92 4.92 0 015.46 2.67c.46-.16 1.25-.345 2.42-.4C8.416 2.212 8.8 2.2 12 2.2zm0 2.2c-2.98 0-3.333.01-4.507.065-1.07.05-1.65.23-2.04.385-.52.206-.89.452-1.285.848-.396.395-.641.764-.848 1.284-.154.39-.335.97-.385 2.04-.055 1.174-.065 1.526-.065 4.506 0 2.98.01 3.333.065 4.507.05 1.07.23 1.65.385 2.04.206.52.452.89.848 1.285.395.396.764.641 1.284.848.39.154.97.335 2.04.385 1.174.055 1.526.065 4.506.065 2.98 0 3.333-.01 4.507-.065 1.07-.05 1.65-.23 2.04-.385.52-.206.89-.452 1.285-.848.396-.395.641-.764.848-1.284.154-.39.335-.97.385-2.04.055-1.174.065-1.526.065-4.506 0-2.98-.01-3.333-.065-4.507-.05-1.07-.23-1.65-.385-2.04-.206-.52-.452-.89-.848-1.285-.395-.396-.764-.641-1.284-.848-.39-.154-.97-.335-2.04-.385C15.333 4.41 14.98 4.4 12 4.4zm0 3.08a4.52 4.52 0 110 9.04 4.52 4.52 0 010-9.04zm0 1.86a2.66 2.66 0 100 5.32 2.66 2.66 0 000-5.32zm4.9-3.78a1.05 1.05 0 11-2.1 0 1.05 1.05 0 012.1 0z"></path></svg></a>
+            </div>
+          </div>
+        </aside>
+      </section><br><br>
+      </div>
+
+      <div class="page-panel" id="projects">
+      <section aria-labelledby="projects-heading" >
+        <h2 id="projects-heading" style="text-align: center; text-decoration: underline;">Featured Projects</h2><br>
+        <div class="grid" style="margin-top:18px ;" >
+          <article class="card" style="border: solid 1px rgba(0, 0, 0, 0.285); ">
+            <div style="height:120px;border-radius:8px;background:linear-gradient(90deg,#1f2937,#111827);display:flex;align-items:center;justify-content:center;color:var(--muted)">Project screenshot</div>
+            <h3>Project One</h3>
+            <p>Responsive UI with interactive components and animations. Built with Vanilla JS and CSS Grid.</p>
+            <div style="display:flex;gap:8px;margin-top:10px"><a href="#" class="btn" style="padding:8px 12px;font-size:13px">Live</a><a href="#" class="btn ghost" style="padding:8px 12px;font-size:13px">GitHub</a></div>
+          </article>
+
+          <article class="card" style="border: solid 1px rgba(0, 0, 0, 0.285); ">
+            <div style="height:120px;border-radius:8px;background:linear-gradient(90deg,#0f1724,#071527);display:flex;align-items:center;justify-content:center;color:var(--muted)">Project screenshot</div>
+            <h3>Project Two</h3>
+            <p>Design system with reusable components and comprehensive documentation. Includes accessibility checks.</p>
+            <div style="display:flex;gap:8px;margin-top:10px"><a href="#" class="btn" style="padding:8px 12px;font-size:13px">Live</a><a href="#" class="btn ghost" style="padding:8px 12px;font-size:13px">GitHub</a></div>
+          </article>
+
+          <article class="card" style="border: solid 1px rgba(0, 0, 0, 0.285); ">
+            <div style="height:120px;border-radius:8px;background:linear-gradient(90deg,#23334d,#11314b);display:flex;align-items:center;justify-content:center;color:var(--muted)">Project screenshot</div>
+            <h3>Project Three</h3>
+            <p>Single Page Application with client-side routing and optimized performance for mobile devices.</p>
+            <div style="display:flex;gap:8px;margin-top:10px"><a href="#" class="btn" style="padding:8px 12px;font-size:13px">Live</a><a href="#" class="btn ghost" style="padding:8px 12px;font-size:13px">GitHub</a></div>
+          </article>
+        </div>
+      </section><br><br>
+      </div>
+
+      <div class="page-panel" id="about">
+      <section aria-labelledby="about-heading">
+        <h2 id="about-heading" style="margin-top:36px ; text-align: center;text-decoration: underline;">About Me</h2>
+        <p style="color:var(--muted);margin-top:8px;text-align:justify;" >I’m a front-end developer who enjoys turning designs into usable products. I focus on writing accessible markup, modular CSS, and performant JavaScript.</p>
+
+        <div class="about-grid" aria-hidden="false">
+            
+            <div class="about-block" aria-label="Education">
+                <h3>Education :-</h3>
+                <table class="info-table" role="table" aria-label="Education history">
+                    <caption class="sr-only">Education history</caption>
+                    <thead>
+                        <tr><th scope="col">Year</th><th scope="col">Program</th><th scope="col">Institution</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2020</td><td>B.Sc. Computer Science</td><td>State University</td></tr>
+                        <tr><td>2018</td><td>Front‑end Bootcamp</td><td>DevWorks Academy</td></tr>
+                    </tbody>
+                </table>
+            </div><br>
+            <div class="about-block" aria-label="Skills">
+              <h3>Skills :-</h3>
+              <p style="color:var(--muted);margin-top:6px;">Core front-end skills and tools I use regularly.</p>
+              <div class="skills-list" style="margin-top:8px;" aria-label="Skills and proficiency">
+                <!-- Each .skill uses data-percent to represent proficiency; adjust values as needed -->
+  
+                <div class="skill" data-percent="95">
+                  <div class="skill-meta"><span class="skill-name">HTML</span><span class="skill-value">95%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="95">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+                <div class="skill" data-percent="90">
+                  <div class="skill-meta"><span class="skill-name">CSS / SASS</span><span class="skill-value">90%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+                <div class="skill" data-percent="88">
+                  <div class="skill-meta"><span class="skill-name">JavaScript (ES6+)</span><span class="skill-value">88%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+                <div class="skill" data-percent="82">
+                  <div class="skill-meta"><span class="skill-name">React</span><span class="skill-value">82%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+                <div class="skill" data-percent="60">
+                  <div class="skill-meta"><span class="skill-name">Java Basics</span><span class="skill-value">60%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+                <div class="skill" data-percent="65">
+                  <div class="skill-meta"><span class="skill-name">Python</span><span class="skill-value">65%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+                <div class="skill" data-percent="75">
+                  <div class="skill-meta"><span class="skill-name">Performance</span><span class="skill-value">75%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+                <div class="skill" data-percent="85">
+                  <div class="skill-meta"><span class="skill-name">Git</span><span class="skill-value">85%</span></div>
+                  <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85">
+                    <div class="skill-fill" style="width:0%"></div>
+                  </div>
+                </div>
+  
+              </div>
+            </div><br>
+            
+          <div class="about-block" aria-label="Hobbies">
+            <h3>Hobbies :-</h3>
+            <p style="color:var(--muted);margin-top:6px;">When I'm not coding, I enjoy:</p>
+            <ul style="margin-top:8px;color:var(--muted)">
+              <li>Photography & editing</li>
+              <li>Open-source contributions</li>
+              <li>Hiking and outdoor activities</li>
+              <li>Learning new UI patterns</li>
+            </ul>
+          </div><br>
+
+          <div class="about-block" aria-label="Family details">
+            <h3>More Info :-</h3>
+            <p style="color:var(--muted);margin-top:6px;">A short note about my family.</p>
+            <table class="info-table" role="table" aria-label="Family details">
+              <caption class="sr-only">More Info</caption>
+              <tbody>
+                <tr><td><strong>Father</strong></td><td>Kati John Benny</td></tr>
+                <tr><td><strong>Mother</strong></td><td>Kati Kavitha</td></tr>
+                <tr><td><strong>Location</strong></td><td>Ongole, Andhra Pradesh</td></tr>
+                <tr><td><strong>Nationality</strong></td><td>Indian</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <div class="page-panel" id="contact">
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading" style="margin-top:36px ; text-align: center;text-decoration: underline;">Contact</h2>
+
+        <form id="contact-form" class="contact-form" data-endpoint="" method="post" novalidate aria-describedby="contact-desc" style="margin-top:18px; max-width:600px; margin-left:auto; margin-right:auto;background-color: rgba(143, 143, 143, 0.822); border: solid 1px rgba(0, 0, 0, 0.285); padding:15px; border-radius:8px;">
+          <p id="contact-desc" style="color:var(--muted);margin-top:8px;text-align: justify;">Use this form to send me a short message — I’ll reply as soon as I can. If you prefer, use the email link below.</p>
+
+          <div class="form-row">
+            <label for="name">Name *</label>
+            <input id="name" name="name" type="text" required placeholder="Your full name">
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="company">Company (optional)</label>
+            <input id="company" name="company" type="text" placeholder="Company or role">
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Subject *</label>
+            <input id="subject" name="subject" type="text" required placeholder="Subject or position">
+          </div>
+
+          <div class="form-row">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Tell me about the role or project..."></textarea>
+            </div>
+            
+            <div class="form-row form-actions">
+                <button type="submit" class="btn">Send message</button>
+            <button type="button" class="btn ghost" id="clear-form">Clear</button>
+            <div class="form-status" aria-live="polite"></div>
+          </div>
+
+          <input type="hidden" name="source" value="Portfolio contact form">
+        </form>
+
+      </section>
+      <section id="Sm" aria-labelledby="Sm">
+        <h2 id="about-heading" style="margin-top:36px ; text-align: center; text-decoration: underline;">Social Networks</h2>
+      
+        <p style="color:var(--muted);margin-top:8px;text-align:justify; text-align: center;" >I’m active on the networks below — feel free to follow or reach out.</p>
+      
+        <ul class="social-list" aria-label="Social links">
+          <li class="social-item">
+            <a class="social-link" href="https://github.com/mrjohnkenly" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.08 0 4.4-2.68 5.36-5.24 5.64.42.36.8 1.08.8 2.18 0 1.58-.02 2.86-.02 3.25 0 .31.21.68.8.56C20.71 21.41 24 17.09 24 12 24 5.65 18.35.5 12 .5z"></path></svg>
+              <div class="social-meta"><div class="social-name">GitHub</div><div class="social-handle">@mrjohnkenly</div></div>
+            </a>
+          </li>
+      
+          <li class="social-item">
+            <a class="social-link" href="https://linkedin.com/in/mrjohnkenly" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.98h4.5V24h-4.5V8.98zm7.5 0h4.32v2.06h.06c.6-1.14 2.06-2.34 4.24-2.34 4.54 0 5.38 2.98 5.38 6.84V24h-4.5v-7.38c0-1.76-.03-4.03-2.46-4.03-2.46 0-2.84 1.92-2.84 3.9V24h-4.5V8.98z"></path></svg>
+              <div class="social-meta"><div class="social-name">LinkedIn</div><div class="social-handle">Mr John Kenly</div></div>
+            </a>
+          </li>
+      
+          <li class="social-item">
+            <a class="social-link" href="mailto:johnkenlykati@gmail.com">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
+              <div class="social-meta"><div class="social-name">Email</div><div class="social-handle">johnkenlykati@gmail.com</div></div>
+            </a>
+          </li>
+      
+          <li class="social-item">
+            <a class="social-link" href="https://wa.me/6281734254" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.57 1.38 5.06L2 22l5.1-1.33A9.97 9.97 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.03 14.54c-.32.9-1.86 1.73-2.58 1.84-.69.11-1.54.16-3.7-.59-3.03-1.01-5-3.6-5.17-3.83-.17-.23-1.41-1.82-1.41-3.49 0-1.66.9-2.43 1.22-2.77.32-.34.7-.37.93-.37.24 0 .51 0 .78 0 .26 0 .61-.1.93.73.32.83 1.08 2.85 1.17 3.06.1.2.18.45.04.73-.14.27-.22.43-.4.66-.18.23-.38.5-.53.66-.14.16-.26.28-.05.55.21.27 1.17 1.88 2.52 3.03 1.73 1.48 2.97 1.8 3.36 1.99.4.19 1.02.12 1.39-.49.37-.61.52-1.06.58-1.17.07-.11.03-.24-.09-.37z"></path></svg>
+              <div class="social-meta"><div class="social-name">WhatsApp</div><div class="social-handle">+62 817-342-54</div></div>
+            </a>
+          </li>
+      
+          <li class="social-item">
+            <a class="social-link" href="https://instagram.com/mrjohnkenly" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.055 1.96.24 2.42.4a4.92 4.92 0 011.77 1.02 4.92 4.92 0 011.02 1.77c.16.46.345 1.25.4 2.42.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.24 1.96-.4 2.42a4.92 4.92 0 01-1.02 1.77 4.92 4.92 0 01-1.77 1.02c-.46.16-1.25.345-2.42.4-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.96-.24-2.42-.4a4.92 4.92 0 01-1.77-1.02 4.92 4.92 0 01-1.02-1.77c-.16-.46-.345-1.25-.4-2.42C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.055-1.17.24-1.96.4-2.42a4.92 4.92 0 011.02-1.77A4.92 4.92 0 015.46 2.67c.46-.16 1.25-.345 2.42-.4C8.416 2.212 8.8 2.2 12 2.2zm0 2.2c-2.98 0-3.333.01-4.507.065-1.07.05-1.65.23-2.04.385-.52.206-.89.452-1.285.848-.396.395-.641.764-.848 1.284-.154.39-.335.97-.385 2.04-.055 1.174-.065 1.526-.065 4.506 0 2.98.01 3.333.065 4.507.05 1.07.23 1.65.385 2.04.206.52.452.89.848 1.285.395.396.764.641 1.284.848.39.154.97.335 2.04.385 1.174.055 1.526.065 4.506.065 2.98 0 3.333-.01 4.507-.065 1.07-.05 1.65-.23 2.04-.385.52-.206.89-.452 1.285-.848.396-.395.641-.764.848-1.284.154-.39.335-.97.385-2.04.055-1.174.065-1.526.065-4.506 0-2.98-.01-3.333-.065-4.507-.05-1.07-.23-1.65-.385-2.04-.206-.52-.452-.89-.848-1.285-.395-.396-.764-.641-1.284-.848-.39-.154-.97-.335-2.04-.385C15.333 4.41 14.98 4.4 12 4.4zm0 3.08a4.52 4.52 0 110 9.04 4.52 4.52 0 010-9.04zm0 1.86a2.66 2.66 0 100 5.32 2.66 2.66 0 000-5.32zm4.9-3.78a1.05 1.05 0 11-2.1 0 1.05 1.05 0 012.1 0z"></path></svg>
+              <div class="social-meta"><div class="social-name">Instagram</div><div class="social-handle">@mrjohnkenly</div></div>
+            </a>
+          </li>
+      
+        </ul>
+      </section><br><br>
+      </div>
+    </main>
+    
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor"/></svg>
+      <span class="sr-only">Back to top</span>
+    </button>
+
+    <footer>
+      <p>© 2026 John Kenly — Built with HTML, CSS & JS</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
