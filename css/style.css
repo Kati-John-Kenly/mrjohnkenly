@@ -338,6 +338,7 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.45rem); font-weight: 700; letter-spacing: -
 .project-showcase {
   position: relative;
   padding: 18px 72px 8px;
+  touch-action: pan-y pinch-zoom;
 }
 .project-grid {
   position: relative;
@@ -825,10 +826,17 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.45rem); font-weight: 700; letter-spacing: -
   h2 { font-size: clamp(2.55rem, 10vw, 3.8rem); }
   .section-aside { max-width: 360px; margin-top: 15px; font-size: .79rem; }
   .project-showcase { padding-inline: 2px; }
-  .project-grid { height: 485px; }
+  .project-nav { display: none; }
+  .project-grid {
+    height: 485px;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .project-card.is-side { opacity: 0 !important; pointer-events: none; }
   .project-card { width: min(86vw, 340px); }
   .project-visual { min-height: 220px; padding: 22px; }
   .visual-has-image { height: 180px; }
+  .visual-has-image .gallery-main-img { object-fit: contain; background: #141712; }
   .thumb-btn img { height: 30px; }
   .thumb-btn span { font-size: .48rem; }
   .visual-label { left: 19px; font-size: .51rem; }
@@ -876,6 +884,18 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.45rem); font-weight: 700; letter-spacing: -
   .header-cta { padding-inline: 8px; }
   .theme-toggle { width: 35px; }
   .footer-links { gap: 8px; }
+}
+@media (hover: none), (pointer: coarse) {
+  body, body * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  input, textarea, [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  img { -webkit-user-drag: none; }
 }
 @media (min-width: 641px) and (max-width: 850px) {
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

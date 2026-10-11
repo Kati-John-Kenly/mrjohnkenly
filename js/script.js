@@ -269,6 +269,7 @@
   }
 
   const projectCards = [...document.querySelectorAll(".project-card")];
+  const projectShowcase = document.querySelector(".project-showcase");
   const projectPrevButton = document.querySelector(".project-nav-prev");
   const projectNextButton = document.querySelector(".project-nav-next");
   let projectIndex = 0;
@@ -385,6 +386,45 @@
     projectNextButton.addEventListener("click", () => setProjectIndex(projectIndex + 1));
   }
 
+  if (projectShowcase) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchPointerId = null;
+    let suppressProjectClickUntil = 0;
+
+    projectShowcase.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "touch") return;
+      touchStartX = event.clientX;
+      touchStartY = event.clientY;
+      touchPointerId = event.pointerId;
+    }, { passive: true });
+
+    projectShowcase.addEventListener("pointerup", (event) => {
+      if (event.pointerType !== "touch" || event.pointerId !== touchPointerId) return;
+      const deltaX = event.clientX - touchStartX;
+      const deltaY = event.clientY - touchStartY;
+      touchPointerId = null;
+      if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) return;
+
+      suppressProjectClickUntil = performance.now() + 500;
+      setProjectIndex(projectIndex + (deltaX < 0 ? 1 : -1));
+    }, { passive: true });
+
+    projectShowcase.addEventListener("pointercancel", (event) => {
+      if (event.pointerId !== touchPointerId) return;
+      touchStartX = 0;
+      touchStartY = 0;
+      touchPointerId = null;
+    }, { passive: true });
+
+    projectShowcase.addEventListener("click", (event) => {
+      if (performance.now() > suppressProjectClickUntil || !event.target.closest(".project-visual")) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      suppressProjectClickUntil = 0;
+    }, true);
+  }
+
   if (projectCards.length) {
     updateProjectCarousel();
     restartProjectAutoplay();
@@ -415,6 +455,16 @@
   const cursor = document.querySelector(".custom-cursor");
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
   const coarsePointer = window.matchMedia("(pointer: coarse)");
+  if (coarsePointer.matches) {
+    document.addEventListener("contextmenu", (event) => event.preventDefault());
+    document.addEventListener("dragstart", (event) => {
+      if (event.target.closest("img")) event.preventDefault();
+    });
+    document.addEventListener("copy", (event) => event.preventDefault());
+    document.addEventListener("selectstart", (event) => {
+      if (!event.target.closest("input, textarea, [contenteditable='true']")) event.preventDefault();
+    });
+  }
   if (!cursor) return;
   const trailCanvas = document.createElement("canvas");
   const trailContext = trailCanvas.getContext("2d");
