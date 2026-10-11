@@ -40,9 +40,9 @@
             <span class="theme-icon-dark" aria-hidden="true">☾</span>
             <span class="theme-toggle-label">Dark theme</span>
           </button>
-          <button class="audio-toggle" type="button" aria-label="Turn inspirational music on" aria-pressed="false" title="Turn inspirational music on">
+          <button class="audio-toggle" type="button" aria-label="Turn original ambient music on" aria-pressed="false" title="Turn original ambient music on">
             <span class="audio-icon" aria-hidden="true">♫</span>
-            <span class="audio-toggle-label">Inspire sound off</span>
+            <span class="audio-toggle-label">Music off</span>
           </button>
           <a class="header-cta menu-resume" href="../pdfs/myResume.pdf" target="_blank" rel="noopener noreferrer">
             Resume <span aria-hidden="true">↗</span>
@@ -90,71 +90,150 @@
           <p class="section-aside">Five independent projects designed and built by me to make everyday experiences a little more useful.</p>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card project-card-campus" data-reveal>
-            <a class="project-visual visual-campus" href="https://www.orderincampus.live/" target="_blank" rel="noopener noreferrer" aria-label="Visit Order In Campus">
-              <span class="visual-label">CAMPUS, MADE SIMPLER</span>
-              <span class="visual-campus-name">order<span>in</span>campus.</span>
-              <span class="visual-campus-menu"><i></i><i></i><i></i></span>
-              <span class="visual-open" aria-hidden="true">↗</span>
-            </a>
-            <div class="project-meta"><span>01 / 05</span><span>CAMPUS ORDERING</span></div>
-            <h3>Order In Campus</h3>
-            <p>A campus-focused ordering experience designed to make finding and placing an order easier.</p>
-            <a class="project-link" href="https://www.orderincampus.live/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
-          </article>
+        <div class="project-showcase" aria-label="Project showcase carousel">
+          <button class="project-nav project-nav-prev" type="button" aria-label="Previous project">&lt;</button>
+          <div class="project-grid">
+            <article class="project-card project-card-campus" data-reveal>
+              <div class="project-gallery" data-gallery="campus">
+                <a class="project-visual visual-has-image" href="https://www.orderincampus.live/" target="_blank" rel="noopener noreferrer" aria-label="Visit live Order In Campus">
+                  <img class="gallery-main-img" src="../imges/projects/campus-1.png" alt="Order In Campus live desktop preview" width="1280" height="800" loading="lazy">
+                  <span class="live-badge"><span class="badge-dot"></span> LIVE APP</span>
+                  <span class="visual-open" aria-hidden="true">↗</span>
+                </a>
+                <div class="project-thumb-strip" role="tablist" aria-label="Order In Campus previews">
+                  <button type="button" class="thumb-btn is-active" data-src="../imges/projects/campus-1.png" aria-label="Desktop preview" title="Desktop preview">
+                    <img src="../imges/projects/campus-1.png" alt="Order In Campus Desktop" loading="lazy">
+                    <span>Desktop</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/campus-2.png" aria-label="Tablet preview" title="Tablet preview">
+                    <img src="../imges/projects/campus-2.png" alt="Order In Campus Tablet" loading="lazy">
+                    <span>Tablet</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/campus-3.png" aria-label="Mobile preview" title="Mobile preview">
+                    <img src="../imges/projects/campus-3.png" alt="Order In Campus Mobile" loading="lazy">
+                    <span>Mobile</span>
+                  </button>
+                </div>
+              </div>
+              <div class="project-meta"><span>01 / 05</span><span>CAMPUS ORDERING</span></div>
+              <h3>Order In Campus</h3>
+              <p>A campus-focused ordering experience designed to make finding and placing an order easier.</p>
+              <a class="project-link" href="https://www.orderincampus.live/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="project-card project-card-svara" data-reveal>
-            <a class="project-visual visual-svara" href="https://mi-svara.ai.studio/" target="_blank" rel="noopener noreferrer" aria-label="Visit Mi-Svara">
-              <span class="visual-label">FIND YOUR RHYTHM</span>
-              <span class="visual-svara-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-              <span class="visual-svara-name">mi-svara<span>♪</span></span>
-              <span class="visual-open" aria-hidden="true">↗</span>
-            </a>
-            <div class="project-meta"><span>02 / 05</span><span>MUSIC LEARNING</span></div>
-            <h3>Mi-Svara</h3>
-            <p>A mobile music-learning platform that brings musical practice and learning into one experience.</p>
-            <a class="project-link" href="https://mi-svara.ai.studio/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="project-card project-card-svara" data-reveal>
+              <div class="project-gallery" data-gallery="svara">
+                <a class="project-visual visual-has-image" href="https://mi-svara.ai.studio/" target="_blank" rel="noopener noreferrer" aria-label="Visit live Mi-Svara">
+                  <img class="gallery-main-img" src="../imges/projects/svara-1.png" alt="Mi-Svara live studio preview" width="1280" height="800" loading="lazy">
+                  <span class="live-badge"><span class="badge-dot"></span> LIVE APP</span>
+                  <span class="visual-open" aria-hidden="true">↗</span>
+                </a>
+                <div class="project-thumb-strip" role="tablist" aria-label="Mi-Svara previews">
+                  <button type="button" class="thumb-btn is-active" data-src="../imges/projects/svara-1.png" aria-label="Studio preview" title="Studio preview">
+                    <img src="../imges/projects/svara-1.png" alt="Mi-Svara Studio" loading="lazy">
+                    <span>Studio</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/svara-2.png" aria-label="Practice hub" title="Practice hub">
+                    <img src="../imges/projects/svara-2.png" alt="Mi-Svara Practice" loading="lazy">
+                    <span>Practice</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/svara-3.png" aria-label="Mobile preview" title="Mobile preview">
+                    <img src="../imges/projects/svara-3.png" alt="Mi-Svara Mobile" loading="lazy">
+                    <span>Mobile</span>
+                  </button>
+                </div>
+              </div>
+              <div class="project-meta"><span>02 / 05</span><span>MUSIC LEARNING</span></div>
+              <h3>Mi-Svara</h3>
+              <p>A mobile music-learning platform that brings musical practice and learning into one experience.</p>
+              <a class="project-link" href="https://mi-svara.ai.studio/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="project-card project-card-python" data-reveal>
-            <a class="project-visual visual-python" href="https://30-days-python.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit 30 Days of Python">
-              <span class="visual-label">A LITTLE PYTHON, EVERY DAY</span>
-              <span class="visual-python-code" aria-hidden="true"><span>&gt;&gt;&gt;</span> <span>learn</span><span>(</span><span>"python"</span><span>)</span></span>
-              <span class="visual-python-days">30 days<span>.</span></span>
-              <span class="visual-open" aria-hidden="true">↗</span>
-            </a>
-            <div class="project-meta"><span>03 / 05</span><span>LEARNING</span></div>
-            <h3>30 Days of Python</h3>
-            <p>A 30-day learning experience for building Python knowledge one step at a time.</p>
-            <a class="project-link" href="https://30-days-python.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="project-card project-card-python" data-reveal>
+              <div class="project-gallery" data-gallery="python">
+                <a class="project-visual visual-has-image" href="https://30-days-python.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit live 30 Days of Python">
+                  <img class="gallery-main-img" src="../imges/projects/python-1.png" alt="30 Days of Python live hub preview" width="1280" height="800" loading="lazy">
+                  <span class="live-badge"><span class="badge-dot"></span> LIVE APP</span>
+                  <span class="visual-open" aria-hidden="true">↗</span>
+                </a>
+                <div class="project-thumb-strip" role="tablist" aria-label="30 Days of Python previews">
+                  <button type="button" class="thumb-btn is-active" data-src="../imges/projects/python-1.png" aria-label="Hub preview" title="Hub preview">
+                    <img src="../imges/projects/python-1.png" alt="Python Hub" loading="lazy">
+                    <span>Platform</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/python-2.png" aria-label="Tracks preview" title="Tracks preview">
+                    <img src="../imges/projects/python-2.png" alt="Python Tracks" loading="lazy">
+                    <span>Tracks</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/python-3.png" aria-label="Mobile preview" title="Mobile preview">
+                    <img src="../imges/projects/python-3.png" alt="Python Mobile" loading="lazy">
+                    <span>Mobile</span>
+                  </button>
+                </div>
+              </div>
+              <div class="project-meta"><span>03 / 05</span><span>LEARNING</span></div>
+              <h3>30 Days of Python</h3>
+              <p>A 30-day learning experience for building Python knowledge one step at a time.</p>
+              <a class="project-link" href="https://30-days-python.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="project-card project-card-progress" data-reveal>
-            <a class="project-visual visual-progress" href="https://progress-productivity.vercel.app/index.html" target="_blank" rel="noopener noreferrer" aria-label="Visit Progress Productivity">
-              <span class="visual-label">MAKE PROGRESS VISIBLE</span>
-              <span class="visual-progress-title">one thing<br>at a time<span>.</span></span>
-              <span class="visual-progress-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-              <span class="visual-open" aria-hidden="true">↗</span>
-            </a>
-            <div class="project-meta"><span>04 / 05</span><span>PRODUCTIVITY</span></div>
-            <h3>Progress Productivity</h3>
-            <p>A productivity-focused project built around making progress feel clear and achievable.</p>
-            <a class="project-link" href="https://progress-productivity.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="project-card project-card-progress" data-reveal>
+              <div class="project-gallery" data-gallery="progress">
+                <a class="project-visual visual-has-image" href="https://progress-productivity.vercel.app/index.html" target="_blank" rel="noopener noreferrer" aria-label="Visit live Progress Productivity">
+                  <img class="gallery-main-img" src="../imges/projects/progress-1.png" alt="Progress Productivity live preview" width="1280" height="800" loading="lazy">
+                  <span class="live-badge"><span class="badge-dot"></span> LIVE APP</span>
+                  <span class="visual-open" aria-hidden="true">↗</span>
+                </a>
+                <div class="project-thumb-strip" role="tablist" aria-label="Progress Productivity previews">
+                  <button type="button" class="thumb-btn is-active" data-src="../imges/projects/progress-1.png" aria-label="App preview" title="App preview">
+                    <img src="../imges/projects/progress-1.png" alt="Progress App" loading="lazy">
+                    <span>App</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/progress-2.png" aria-label="Planner preview" title="Planner preview">
+                    <img src="../imges/projects/progress-2.png" alt="Progress Planner" loading="lazy">
+                    <span>Planner</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/progress-3.png" aria-label="Mobile preview" title="Mobile preview">
+                    <img src="../imges/projects/progress-3.png" alt="Progress Mobile" loading="lazy">
+                    <span>Mobile</span>
+                  </button>
+                </div>
+              </div>
+              <div class="project-meta"><span>04 / 05</span><span>PRODUCTIVITY</span></div>
+              <h3>Progress Productivity</h3>
+              <p>A productivity-focused project built around making progress feel clear and achievable.</p>
+              <a class="project-link" href="https://progress-productivity.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="project-card project-card-fitness" data-reveal>
-            <a class="project-visual visual-fitness" href="https://fitness-app-ashy-xi.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit FitGuide AI">
-              <span class="visual-label">MOVE WELL. FEEL GOOD.</span>
-              <span class="visual-fitness-title">your pace.<br>your progress.</span>
-              <span class="visual-fitness-stamp" aria-hidden="true">FIT<br>GUIDE<br><span>✳</span></span>
-              <span class="visual-open" aria-hidden="true">↗</span>
-            </a>
-            <div class="project-meta"><span>05 / 05</span><span>FITNESS &amp; WELLNESS</span></div>
-            <h3>FitGuide AI</h3>
-            <p>A wellness experience with personalized home workouts, yoga, and nutrition guidance.</p>
-            <a class="project-link" href="https://fitness-app-ashy-xi.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="project-card project-card-fitness" data-reveal>
+              <div class="project-gallery" data-gallery="fitness">
+                <a class="project-visual visual-has-image" href="https://fitness-app-ashy-xi.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit live FitGuide AI">
+                  <img class="gallery-main-img" src="../imges/projects/fitness-1.png" alt="FitGuide AI live hero preview" width="1280" height="800" loading="lazy">
+                  <span class="live-badge"><span class="badge-dot"></span> LIVE APP</span>
+                  <span class="visual-open" aria-hidden="true">↗</span>
+                </a>
+                <div class="project-thumb-strip" role="tablist" aria-label="FitGuide AI previews">
+                  <button type="button" class="thumb-btn is-active" data-src="../imges/projects/fitness-1.png" aria-label="Home preview" title="Home preview">
+                    <img src="../imges/projects/fitness-1.png" alt="FitGuide Home" loading="lazy">
+                    <span>Home</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/fitness-2.png" aria-label="Plans preview" title="Plans preview">
+                    <img src="../imges/projects/fitness-2.png" alt="FitGuide Plans" loading="lazy">
+                    <span>Plans</span>
+                  </button>
+                  <button type="button" class="thumb-btn" data-src="../imges/projects/fitness-3.png" aria-label="Mobile preview" title="Mobile preview">
+                    <img src="../imges/projects/fitness-3.png" alt="FitGuide Mobile" loading="lazy">
+                    <span>Mobile</span>
+                  </button>
+                </div>
+              </div>
+              <div class="project-meta"><span>05 / 05</span><span>FITNESS &amp; WELLNESS</span></div>
+              <h3>FitGuide AI</h3>
+              <p>A wellness experience with personalized home workouts, yoga, and nutrition guidance.</p>
+              <a class="project-link" href="https://fitness-app-ashy-xi.vercel.app/" target="_blank" rel="noopener noreferrer">Visit live project <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+          <button class="project-nav project-nav-next" type="button" aria-label="Next project">&gt;</button>
         </div>
       </section>
 

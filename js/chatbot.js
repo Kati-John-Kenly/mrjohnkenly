@@ -1,8 +1,8 @@
 /**
- * Google Gemini Floating Chatbot for John Kenly Portfolio
- * - Intelligent dual-mode: Real Gemini API + Built-in offline knowledge engine
- * - Interactive website explorer & direct contact facilitator
- * - Contextual quick chips, smooth in-page navigation, and responsive controls
+ * JK Assistant Floating Chatbot for John Kenly Portfolio
+ * - Simple, sleek, and responsive
+ * - Interactive website navigation & direct contact facilitator
+ * - Built-in instant portfolio intelligence engine with optional live Gemini API
  */
 
 (() => {
@@ -57,11 +57,10 @@
 
   // State Management
   const STORAGE_KEY_API = "gemini_api_key";
-  const STORAGE_KEY_MODEL = "gemini_model_choice";
-  const STORAGE_KEY_DISMISSED = "gemini_teaser_dismissed";
+  const STORAGE_KEY_DISMISSED = "jk_teaser_dismissed";
 
   let apiKey = localStorage.getItem(STORAGE_KEY_API) || "";
-  let selectedModel = localStorage.getItem(STORAGE_KEY_MODEL) || "gemini-2.0-flash";
+  let selectedModel = "gemini-2.0-flash";
   let conversationHistory = [];
   let isThinking = false;
   let isOpen = false;
@@ -75,9 +74,6 @@
   let inputForm = null;
   let chatInput = null;
   let sendBtn = null;
-  let settingsModal = null;
-  let settingsKeyInput = null;
-  let settingsModelSelect = null;
   let statusBadge = null;
 
   // Initialize
@@ -86,7 +82,6 @@
     bindEvents();
     renderWelcomeMessage();
     setupTeaserTimer();
-    updateApiStatusDisplay();
   }
 
   // Create Markup and inject into body
@@ -121,8 +116,8 @@
       <button class="chat-launcher-btn" id="chatLauncherBtn" type="button" aria-label="Open JK Assistant" aria-expanded="false">
         <span class="launcher-status-dot" aria-hidden="true"></span>
         <div class="launcher-icon-wrap" aria-hidden="true">
-          <!-- Gemini Sparkle Icon -->
-          <svg class="launcher-icon-open" viewBox="0 0 24 24" width="28" height="28" fill="none">
+          <!-- Sparkle Icon -->
+          <svg class="launcher-icon-open" viewBox="0 0 24 24" width="26" height="26" fill="none">
             <path d="M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z" fill="url(#geminiLauncherGrad)"/>
             <path d="M19 16L20.2 19.3L23.5 20.5L20.2 21.7L19 25L17.8 21.7L14.5 20.5L17.8 19.3L19 16Z" fill="#C4F263" transform="scale(0.5) translate(14, 10)"/>
             <defs>
@@ -134,7 +129,7 @@
             </defs>
           </svg>
           <!-- Close Icon -->
-          <svg class="launcher-icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <svg class="launcher-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -165,17 +160,11 @@
                 <span class="chat-gemini-tag">AI</span>
               </div>
               <div class="chat-brand-status" id="chatStatusText">
-                JK Assistant • Online
+                Online • Portfolio Guide
               </div>
             </div>
           </div>
           <div class="chat-header-actions">
-            <button class="chat-header-btn" id="chatSettingsBtn" type="button" aria-label="JK Assistant settings" title="Settings">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-              </svg>
-            </button>
             <button class="chat-header-btn" id="chatResetBtn" type="button" aria-label="Clear chat" title="Clear chat">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
@@ -210,7 +199,7 @@
             type="text" 
             class="chat-input" 
             id="chatInput" 
-            placeholder="Ask anything about John, projects, or contact..." 
+            placeholder="Ask anything about John, projects, contact..." 
             autocomplete="off" 
             aria-label="Your message"
           />
@@ -222,59 +211,6 @@
           </button>
         </form>
         <div class="chat-footer-note">JK Assistant • Powered by Gemini AI</div>
-
-        <!-- Settings Modal -->
-        <div class="chat-settings-modal" id="chatSettingsModal" role="dialog" aria-label="JK Assistant Configuration">
-          <div class="settings-header">
-            <div class="settings-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z" fill="url(#geminiHeaderGrad)"/>
-              </svg>
-              JK Assistant Settings
-            </div>
-            <button class="chat-header-btn" id="settingsCloseBtn" type="button" aria-label="Close settings">✕</button>
-          </div>
-            <button class="chat-header-btn" id="settingsCloseBtn" type="button" aria-label="Close settings">✕</button>
-          </div>
-
-          <div class="settings-body">
-            <div class="settings-status-box" id="settingsStatusBox">
-              <strong>Current Mode:</strong>
-              <span id="settingsModeText">Built-in Smart Assistant (Active)</span>
-            </div>
-
-            <div class="settings-field">
-              <label class="settings-label" for="geminiApiKeyInput">GOOGLE GEMINI API KEY (OPTIONAL)</label>
-              <input 
-                type="password" 
-                class="settings-input" 
-                id="geminiApiKeyInput" 
-                placeholder="AIzaSy..." 
-                autocomplete="off" 
-              />
-              <p class="settings-hint">
-                Add your free key from <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio ↗</a> to enable live Gemini generative answers. Stored safely in your local browser only.
-              </p>
-            </div>
-
-            <div class="settings-field">
-              <label class="settings-label" for="geminiModelSelect">GEMINI MODEL</label>
-              <select class="settings-input" id="geminiModelSelect">
-                <option value="gemini-2.0-flash">Gemini 2.0 Flash (Fastest &amp; Latest)</option>
-                <option value="gemini-1.5-flash">Gemini 1.5 Flash (Reliable)</option>
-              </select>
-            </div>
-
-            <div class="settings-hint">
-              <strong>Zero-config guarantee:</strong> Without an API key, the bot automatically runs its comprehensive built-in portfolio intelligence engine with full knowledge of John's work, skills, and interactive navigation!
-            </div>
-
-            <div class="settings-actions">
-              <button class="settings-save-btn" id="settingsSaveBtn" type="button">Save Settings</button>
-              <button class="settings-clear-btn" id="settingsClearBtn" type="button">Clear Key</button>
-            </div>
-          </div>
-        </div>
       </div>
     `;
 
@@ -289,17 +225,7 @@
     inputForm = document.getElementById("chatInputForm");
     chatInput = document.getElementById("chatInput");
     sendBtn = document.getElementById("chatSendBtn");
-    settingsModal = document.getElementById("chatSettingsModal");
-    settingsKeyInput = document.getElementById("geminiApiKeyInput");
-    settingsModelSelect = document.getElementById("geminiModelSelect");
     statusBadge = document.getElementById("chatStatusText");
-
-    if (apiKey && settingsKeyInput) {
-      settingsKeyInput.value = apiKey;
-    }
-    if (selectedModel && settingsModelSelect) {
-      settingsModelSelect.value = selectedModel;
-    }
   }
 
   // Teaser bubble timing
@@ -360,38 +286,6 @@
       renderWelcomeMessage();
     });
 
-    // Settings Toggle
-    document.getElementById("chatSettingsBtn").addEventListener("click", () => {
-      settingsModal.classList.add("is-open");
-    });
-    document.getElementById("settingsCloseBtn").addEventListener("click", () => {
-      settingsModal.classList.remove("is-open");
-    });
-
-    // Settings Save & Clear
-    document.getElementById("settingsSaveBtn").addEventListener("click", () => {
-      apiKey = settingsKeyInput.value.trim();
-      selectedModel = settingsModelSelect.value;
-      if (apiKey) {
-        localStorage.setItem(STORAGE_KEY_API, apiKey);
-      } else {
-        localStorage.removeItem(STORAGE_KEY_API);
-      }
-      localStorage.setItem(STORAGE_KEY_MODEL, selectedModel);
-      settingsModal.classList.remove("is-open");
-      updateApiStatusDisplay();
-      appendBotMessage("Settings updated! Now configured to use " + (apiKey ? "Google Gemini (" + selectedModel + ") with live intelligence." : "Built-in smart portfolio engine."));
-    });
-
-    document.getElementById("settingsClearBtn").addEventListener("click", () => {
-      apiKey = "";
-      settingsKeyInput.value = "";
-      localStorage.removeItem(STORAGE_KEY_API);
-      updateApiStatusDisplay();
-      settingsModal.classList.remove("is-open");
-      appendBotMessage("API Key cleared. Switched back to built-in smart assistant.");
-    });
-
     // Form Submit
     inputForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -422,11 +316,7 @@
     // Escape key closes chat
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && isOpen) {
-        if (settingsModal.classList.contains("is-open")) {
-          settingsModal.classList.remove("is-open");
-        } else {
-          closeChat();
-        }
+        closeChat();
       }
     });
   }
@@ -455,20 +345,6 @@
     isOpen = false;
     widgetRoot.classList.remove("is-open");
     launcherBtn.setAttribute("aria-expanded", "false");
-    settingsModal.classList.remove("is-open");
-  }
-
-  function updateApiStatusDisplay() {
-    const isLive = Boolean(apiKey);
-    const modeText = document.getElementById("settingsModeText");
-    if (modeText) {
-      modeText.textContent = isLive 
-        ? `Live Google Gemini API (${selectedModel})`
-        : "Built-in Smart Assistant (Active)";
-    }
-    if (statusBadge) {
-      statusBadge.textContent = isLive ? `JK Assistant (${selectedModel}) • Online` : "JK Assistant • Online";
-    }
   }
 
   // Welcome Message
@@ -596,15 +472,15 @@
 
     try {
       if (apiKey) {
-        // Mode A: Live Google Gemini API
+        // Mode A: Live Google Gemini API (if key exists)
         await handleGeminiApiRequest(query);
       } else {
-        // Mode B: Smart Built-in Knowledge Base Engine
+        // Mode B: Instant Smart Built-in Engine
         await handleLocalEngineRequest(query);
       }
     } catch (err) {
-      console.warn("Falling back to local knowledge engine:", err);
-      await handleLocalEngineRequest(query, true);
+      console.warn("Using built-in knowledge engine:", err);
+      await handleLocalEngineRequest(query, false);
     } finally {
       isThinking = false;
       chatInput.disabled = false;
@@ -658,7 +534,6 @@ INSTRUCTIONS:
 - Emphasize John's focus on user experience, responsiveness, and clean code.
     `.trim();
 
-    // Prepare contents payload
     const contents = [
       {
         role: "user",
@@ -670,7 +545,6 @@ INSTRUCTIONS:
       }
     ];
 
-    // Include recent history (last 6 turns)
     const recent = conversationHistory.slice(-6);
     recent.forEach((item) => {
       contents.push({
@@ -692,8 +566,7 @@ INSTRUCTIONS:
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.error?.message || `API error: ${response.status}`);
+      throw new Error(`API error: ${response.status}`);
     }
 
     const data = await response.json();
@@ -712,19 +585,14 @@ INSTRUCTIONS:
   }
 
   // =========================================================================
-  // Mode B: Smart Local Portfolio Engine (Zero-Config Fallback)
+  // Mode B: Smart Local Portfolio Engine
   // =========================================================================
-  async function handleLocalEngineRequest(query, hadApiError = false) {
-    // Artificial thinking delay for realism
-    await new Promise((res) => setTimeout(res, 450));
+  async function handleLocalEngineRequest(query) {
+    await new Promise((res) => setTimeout(res, 380));
 
     const lower = query.toLowerCase();
     let replyHtml = "";
     let actions = [];
-
-    if (hadApiError) {
-      replyHtml += `<p style="font-size:0.75rem; color:#d96570;"><em>(Gemini API unavailable; using built-in knowledge engine)</em></p>`;
-    }
 
     // Intent 1: Greetings & Identity
     if (matchesAny(lower, ["hi", "hello", "hey", "who are you", "what can you do", "help", "good morning", "good evening", "greetings"])) {
@@ -966,7 +834,6 @@ INSTRUCTIONS:
       actions.push({ text: "Scroll to Projects ↘", action: "scroll", target: "#work" });
     }
 
-    // Limit to 3 most relevant buttons so it stays neat
     return actions.slice(0, 3);
   }
 
@@ -977,4 +844,3 @@ INSTRUCTIONS:
     init();
   }
 })();
-
