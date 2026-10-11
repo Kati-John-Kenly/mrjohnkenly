@@ -829,8 +829,8 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.45rem); font-weight: 700; letter-spacing: -
   .project-nav { display: none; }
   .project-grid {
     height: 485px;
-    mask-image: none;
-    -webkit-mask-image: none;
+    mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
   }
   .project-card.is-side { opacity: 0 !important; pointer-events: none; }
   .project-card { width: min(86vw, 340px); }
